@@ -1,0 +1,35 @@
+server:
+  port: 20202
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.204.110:3306/test_dispatcher?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: root
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  rabbitmq:
+    host: 192.168.204.110
+    password: admin
+    username: admin
+    virtual-host: /
+    port: 5672
+    #开启手动ack机制，让程序去控制MQ消息的重发和删除及转移
+#    listener:
+#      direct:
+#        acknowledge-mode: manual
+#        retry:
+#          enabled: true   #开启重试
+#          max-attempts: 3 #最大重试次数
+#          initial-interval: 1000ms #重试间隔时间
+    listener:
+      simple:
+        acknowledge-mode: manual  #默认为none为自动ack，就是消息一旦消费立即移除修改为手动需要重序控制
+        retry:
+          enabled: true   #开启重试
+          max-attempts: 3 #最大重试次数
+          initial-interval: 1000ms #重试间隔时间
+    #集群连接方式
+    #addresses: 192.168.204.30:5672,192.168.204.30:5673
+#logging:
+#  level:
+#    root: debug

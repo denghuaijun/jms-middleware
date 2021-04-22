@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>springboot-rabbitmq</artifactId>
+        <groupId>com.jms</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>distrbuted-transaction</artifactId>
+    <description>分为订单服务和配送服务来测试使用rabbitmq来处理分布式事务问题</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>springboot-rabbitmq-order-service</module>
+        <module>springboot-rabbitmq-dispatcher-service</module>
+    </modules>
+
+
+</project>
