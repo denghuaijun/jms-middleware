@@ -34,4 +34,21 @@ public class ProducerTest {
         orderService.sendTopicMsg("1","1","1");
 
     }
+    /**
+     * 测试队列的TTL设置模式
+     */
+    @Test
+    public void testTTLQueue(){
+        for (int i = 0; i <11 ; i++) {
+            orderService.sendTTLQueueMsg("1","1","1");
+        }
+    }
+    /**
+     * 测试message的TTL设置模式
+     */
+    @Test
+    public void testTTLMsg(){
+        orderService.sendTTLMsg("1","1","1");
+
+    }
 }
