@@ -1,4 +1,4 @@
-package com.jms.kafka.client;
+package com.jms.kafka.client.producer;
 
 import com.jms.kafka.config.MySerializer;
 import com.jms.kafka.entity.Company;

@@ -1,4 +1,4 @@
-package com.jms.kafka.client;
+package com.jms.kafka.client.producer;
 
 import com.jms.kafka.config.MyDefinePartitioner;
 import com.jms.kafka.config.MyProducerInteceptorPrefix;
